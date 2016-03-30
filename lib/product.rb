@@ -70,4 +70,9 @@ class Product
     end
   end
 
+  def stock_decrement
+    @stock -= 1
+  end
+
+
 end

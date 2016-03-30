@@ -50,6 +50,10 @@ attr_accessor :name
     raise CustomerNotFoundError, "#{name_to_find} not found. Maybe add them now?"
   end
 
+
+  def purchase(product)
+    
+
   private
 
 
