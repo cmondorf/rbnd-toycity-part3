@@ -52,7 +52,11 @@ attr_accessor :name
 
 
   def purchase(product)
-    
+    if
+      Produc
+      Transaction.new(self, product)
+    end
+  end
 
   private
 

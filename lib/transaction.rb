@@ -2,6 +2,8 @@ class Transaction
 
 attr_accessor :id, :customer, :product
 
+@@transactions =[]
+
 @@transaction_id = 0
 
 def initialize(customer, product)
@@ -9,8 +11,32 @@ def initialize(customer, product)
   @id = @@transaction_id
   @customer = customer
   @product = product
+  stock_decrement
+  @@transactions << self
 end
 
+def self.all
+  @@transactions
+end
+
+def self.find(trans_id)
+  counter = 0
+  while counter < @@transactions.count
+    if trans_id == @@transactions[counter].id
+    #put everything into a hash
+      found_trans_hash = @@transactions[counter]
+      return found_trans_hash
+    end
+  counter += 1
+  end
+  raise TransactionNotFoundError, "#{trans_id} doesn't seem to exist."
+end
+
+private
+
+def stock_decrement
+  @product.stock -= 1
+end
 
 
 end
