@@ -1,0 +1,18 @@
+Reflections
+
+How long did you spend working on this project?
+
+It's hard to say exactly as I was also busy with other projects during this time, but I started this project about two weeks ago.
+
+What was the most rewarding challenge you conquered?
+
+It took me a while to be able to access one object's attributes from another. I still find this a bit tricky and not quite intuitive and so I hope to practice is some more.
+
+What two additional features did you build? Why?
+
+The first feature calculates the earnings so far by adding the prices from each sale.
+The second feature retrieves the number of unique customers.
+
+Where do you still have room to grow?
+
+I still find it hard to have a mental model of the objects. I find the notation to access attributes from different objects at different stages to still be tricky.
