@@ -1,19 +1,25 @@
 class Transaction
 
-attr_accessor :id, :customer, :product
+attr_accessor :id, :customer, :product, :price
 
 @@transactions =[]
 
 @@transaction_id = 0
 
 def initialize(customer, product)
-  @@transaction_id += 1
-  @id = @@transaction_id
-  @customer = customer
-  @product = product
-  stock_decrement
-  @@transactions << self
+  if product.in_stock? == false
+    raise ProductOutOfStockError, "#{product.title} seems to be out of stock. Sorry!"
+  else
+    @@transaction_id += 1
+    @id = @@transaction_id
+    @customer = customer
+    @product = product
+    stock_decrement
+    @@transactions << self
+  end
 end
+
+
 
 def self.all
   @@transactions
