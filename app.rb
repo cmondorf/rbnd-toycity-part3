@@ -70,3 +70,5 @@ puts transaction2.product == nanoblock # Should return true
 # Custom functionality
 
 Transaction.total_sales_value
+
+Transaction.total_unique_customers

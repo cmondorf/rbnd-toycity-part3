@@ -30,6 +30,16 @@ class Transaction
     puts "Total sales value is currently $#{value}."
   end
 
+  def self.total_unique_customers
+    customers = []
+    i = 0
+    while i < @@transactions.count
+      customers[i]= @@transactions[i].customer.name
+      i += 1
+    end
+    customers.uniq!
+    puts "Total number of individual customers: #{customers.count}"
+  end
 
 
   def self.all
